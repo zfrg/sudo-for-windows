@@ -16,4 +16,5 @@ for i in range(len(sys.argv)):
 
 if not ctypes.windll.shell32.IsUserAnAdmin():
     ctypes.windll.shell32.ShellExecuteW(None, u"runas", sys.executable, SCRIPT_PATH + " " + CMD_LINE, None, 1)
+else:
     subprocess.run(CMD_LINE, shell=True, check=True)
